@@ -16,15 +16,18 @@ const int F = 13;     // Output F for the 7447 IC
 const int G = 14;     // Output G for the 7447 IC
 void setup() {
   // Set the pin modes  
-    pinMode(CLK1, OUTPUT);
-  pinMode(CLK2, OUTPUT);  pinMode(D1, OUTPUT);
-  pinMode(D2, OUTPUT);  pinMode(CLR1, OUTPUT);
-  pinMode(CLR2, OUTPUT);  pinMode(A, OUTPUT);
+  pinMode(CLK1, OUTPUT);
+  pinMode(CLK2, OUTPUT); 
+  pinMode(D1, OUTPUT);
+  pinMode(D2, OUTPUT); 
+  pinMode(CLR1, OUTPUT);
+  pinMode(CLR2, OUTPUT); 
+  pinMode(A, OUTPUT);
   pinMode(B, OUTPUT);  
-    pinMode(C, OUTPUT);
+  pinMode(C, OUTPUT);
   pinMode(D, OUTPUT);
   pinMode(E, OUTPUT); 
-     pinMode(F, OUTPUT);
+  pinMode(F, OUTPUT);
   pinMode(G, OUTPUT);}
 void loop() {
   // Display numbers from 99 to 0  
@@ -36,14 +39,18 @@ void loop() {
     digitalWrite(D1, tens & 1);
     digitalWrite(D2, ones & 1);
     // Clock the data into the 7474 ICs    
-        digitalWrite(CLK1, HIGH);
-    digitalWrite(CLK2, HIGH);    digitalWrite(CLK1, LOW);
+    digitalWrite(CLK1, HIGH);
+    digitalWrite(CLK2, HIGH);    
+    digitalWrite(CLK1, LOW);
     digitalWrite(CLK2, LOW);
     // Display the BCD number on the seven-segment display    
-        digitalWrite(A, !(ones & 1));
-    digitalWrite(B, !(tens & 2));    digitalWrite(C, !(tens & 4));
-    digitalWrite(D, !(tens & 8));    digitalWrite(E, !(tens & 16));
-    digitalWrite(F, !(tens & 32));    digitalWrite(G, !(tens & 64));
+    digitalWrite(A, !(ones & 1));
+    digitalWrite(B, !(tens & 2));    
+    digitalWrite(C, !(tens & 4));
+    digitalWrite(D, !(tens & 8));   
+    digitalWrite(E, !(tens & 16));
+    digitalWrite(F, !(tens & 32));   
+    digitalWrite(G, !(tens & 64));
     // Delay for a second
     delay(1000); 
         }
